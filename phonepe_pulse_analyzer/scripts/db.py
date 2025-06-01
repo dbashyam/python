@@ -49,6 +49,7 @@ def initialize_database():
     );
     """)
 
+
     cursor.execute(create_table_query)
     conn.commit()
     cursor.close()

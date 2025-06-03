@@ -49,6 +49,83 @@ def initialize_database():
     );
     """)
 
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS map_user (
+        id SERIAL PRIMARY KEY,
+        country TEXT,
+        state TEXT,
+        district TEXT,
+        year INTEGER,
+        registered_users BIGINT,
+        app_opens BIGINT
+    );
+    """)
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS map_transaction (
+        id SERIAL PRIMARY KEY,
+        country TEXT,
+        state TEXT,
+        district TEXT,
+        year INTEGER,
+        transaction_count BIGINT,
+        transaction_amount DOUBLE PRECISION
+    );
+    """)
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS map_insurance (
+        id SERIAL PRIMARY KEY,
+        country TEXT,
+        state TEXT,
+        district TEXT,
+        year INTEGER,
+        insured_count BIGINT,
+        insured_amount DOUBLE PRECISION
+    );
+    """)
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS top_user (
+        id SERIAL PRIMARY KEY,
+        country TEXT,
+        state TEXT,
+        year INT,
+        quarter INT,
+        type TEXT,  -- 'state', 'district', or 'pincode'
+        entity_name TEXT,
+        count BIGINT,
+        percentage DOUBLE PRECISION
+    );
+    """)
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS top_insurance (
+        id SERIAL PRIMARY KEY,
+        country TEXT,
+        state TEXT,
+        year INT,
+        quarter INT,
+        type TEXT,
+        entity_name TEXT,
+        count BIGINT,
+        amount DOUBLE PRECISION
+    );
+    """)
+
+    cursor.execute(""" 
+    CREATE TABLE IF NOT EXISTS top_map (
+        id SERIAL PRIMARY KEY,
+        country TEXT,
+        state TEXT,
+        year INTEGER,
+        quarter INTEGER,
+        type TEXT,
+        entity_name TEXT,
+        count BIGINT,
+        amount DOUBLE PRECISION
+    );
+    """) 
 
     cursor.execute(create_table_query)
     conn.commit()

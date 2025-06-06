@@ -1,4 +1,0 @@
-# Dependencies go here
-GitPython
-psycopg2-binary
-pandas

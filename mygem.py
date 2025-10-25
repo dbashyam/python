@@ -8,4 +8,4 @@ if prompt is not None:
         model="gemma-3-27b-it",
         contents=prompt
     )
-    st.write(response. Text)
+    st.write(response.text)

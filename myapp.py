@@ -4,7 +4,7 @@ from huggingface_hub import InferenceClient
 
 client = InferenceClient(
     provider="nebius",
-    api_key="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",
+    api_key="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",
 )
 
 prompt = st.chat_input("Enter your chat input:")
@@ -18,3 +18,4 @@ if prompt is not None:
 
 
     st.image(image)
+

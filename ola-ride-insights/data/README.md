@@ -1,6 +1,6 @@
 # Dataset Documentation for Ola Ride Insights
 
-## Data Sources
+## Data Source
 The dataset used in this project is derived from OLA's ride-sharing platform, encompassing various aspects of ride bookings, driver availability, fare calculations, and customer preferences. The data is collected over a specified period and includes both successful and cancelled rides.
 
 ## Dataset Structure
